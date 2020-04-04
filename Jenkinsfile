@@ -7,6 +7,7 @@ pipeline {
             steps {
                 sh label: '', script: '/tmp/pankaj.sh'
                 build 'Test-Job'
+                cleanWs()
             }
         }
     }
