@@ -7,6 +7,9 @@ pipeline {
             steps {
                 sh label: '', script: '/tmp/pankaj.sh'
             }
+            steps {
+                build 'Test-Job'
+            }
         }
     }
 }
