@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh /tmp/pankaj.sh
+                sh label: '', script: '/tmp/pankaj.sh'
             }
         }
     }
