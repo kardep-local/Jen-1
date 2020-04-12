@@ -1,8 +1,9 @@
 pipeline {
-    agent { dockerfile true }
+    agent { 
+        dockerfile { label 'ubuntu-slave-115' }
+          }
     stages {
         stage('Test') {
-            agent { label 'ubuntu-slave-115' }
             steps {
                 sh 'node --version'
                 sh 'svn --version'
