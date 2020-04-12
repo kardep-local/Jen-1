@@ -1,10 +1,18 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3'
-                     label 'ubuntu-slave-115' } }
+    agent none
     stages {
-        stage('build') {
+        stage('Back-end') {
+            agent {
+                docker { image 'maven:3-alpine' label 'ubuntu-slave-115' } } 
             steps {
                 sh 'mvn --version'
+            }
+        }
+        stage('Front-end') {
+            agent {
+                docker { image 'node:7-alpine' label 'ubuntu-slave-115' } }
+            steps {
+                sh 'node --version'
             }
         }
     }
