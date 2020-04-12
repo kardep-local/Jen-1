@@ -7,8 +7,8 @@ pipeline {
      stages {
 	    stage('Front-end') {
 		    steps {
-			     sh 'mvn -B'
+			     sh 'mvn -e -B'
 				}
-	     }
-		}
-	}
+	                      }
+	   } 
+	 }
